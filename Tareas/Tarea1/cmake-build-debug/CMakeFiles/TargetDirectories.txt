@@ -1,0 +1,3 @@
+/Users/robjimn/Documents/Git Projects/DataStructures/Tareas/Tarea1/cmake-build-debug/CMakeFiles/Tarea1.dir
+/Users/robjimn/Documents/Git Projects/DataStructures/Tareas/Tarea1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/robjimn/Documents/Git Projects/DataStructures/Tareas/Tarea1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
