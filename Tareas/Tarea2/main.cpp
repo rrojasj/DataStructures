@@ -6,7 +6,7 @@
 using namespace std;
 
 int pause_cls() {
-    std::cout << "Presione enter para continuar..." << std::endl << "\n";
+    std::cout << "\nPresione enter para continuar..." << std::endl << "\n";
     std::cin.get(); // Wait for user to press Enter key
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear the input buffer
     return 0;
@@ -14,12 +14,12 @@ int pause_cls() {
 
 int getVectorSize(){
 
-    int agesQuantity;
+    int agesQty;
 
-    cout << "Por favor indique la cantidad de edades a almacenar para este vector: ";
-    cin >> agesQuantity;
+    cout << "Cantidad de edades a almacenar: ";
+    cin >> agesQty;
 
-    return agesQuantity;
+    return agesQty;
 }
 
 void getVectorAges(int* mainArray, int arrayLength, string& msg){
@@ -54,7 +54,7 @@ int* fillVectorRand (int agesQty) {
     return ageArray;
 }
 
-int* fillVectorManually(int agesQty) {
+int* fillVectorMan (int agesQty) {
 
     int* ageArray= new int[agesQty];
 
@@ -71,12 +71,33 @@ int* fillVectorManually(int agesQty) {
     return ageArray;
 }
 
-void getOrderAsc(){
-    int agesQuantity = getVectorSize();
-    int* ageArray = fillVectorRand(agesQuantity);
+int* applyFilling (int agesQty) {
+    int fillOption;
+    int *ageArray;
 
-    for (int i=0; i < agesQuantity-1; i++){
-        for(int j=0; j < agesQuantity-1; j++){
+    do {
+        cout << "\nMétodo de ingreso de datos - 1.Automático o 2.Manual: ";
+        cin >> fillOption;
+
+        if (fillOption == 1) {
+            ageArray = fillVectorRand(agesQty);
+        } else if (fillOption == 2) {
+            ageArray = fillVectorMan(agesQty);
+        }
+        else {
+            cout << "\n****** ERROR: Opción incorrecta. Trate nuevamente! ******\n";
+        }
+    } while (fillOption != 1 && fillOption != 2);
+
+    return ageArray;
+}
+
+void getOrderAsc(){
+    int agesQty = getVectorSize();
+    int* ageArray = applyFilling(agesQty);
+
+    for (int i=0; i < agesQty-1; i++){
+        for(int j=0; j < agesQty-1; j++){
             int aux;
             if (ageArray[j] > ageArray[j+1]){
                 aux = ageArray[j+1];
@@ -86,16 +107,16 @@ void getOrderAsc(){
         }
     }
     string orderAscMsg = "\nLa edades ordenadas ascendentemente son: \n";
-    getVectorAges(ageArray, agesQuantity, orderAscMsg);
-    delete[] ageArray;
+    getVectorAges(ageArray, agesQty, orderAscMsg);
+
 }
 
 void getOrderDesc(){
-    int agesQuantity = getVectorSize();
-    int* ageArray = fillVectorRand(agesQuantity);
+    int agesQty = getVectorSize();
+    int* ageArray = applyFilling(agesQty);
 
-    for (int i=0; i < agesQuantity-1; i++){
-        for(int j=0; j < agesQuantity-1; j++){
+    for (int i=0; i < agesQty-1; i++){
+        for(int j=0; j < agesQty-1; j++){
             int aux;
             if (ageArray[j] < ageArray[j+1]){
                 aux = ageArray[j+1];
@@ -105,38 +126,37 @@ void getOrderDesc(){
         }
     }
     string orderAscMsg = "\nLa edades ordenadas ascendentemente son: \n";
-    getVectorAges(ageArray, agesQuantity, orderAscMsg);
-    delete[] ageArray;
+    getVectorAges(ageArray, agesQty, orderAscMsg);
+
 }
 
 void getAvgAges(){
-    int agesQuantity = getVectorSize();
-    int* ageArray = fillVectorRand(agesQuantity);
+    int agesQty = getVectorSize();
+    int* ageArray = applyFilling(agesQty);
 
     int totalSum = 0;
 
-    for (int i=0; i < agesQuantity; i++){
+    for (int i=0; i < agesQty; i++){
         totalSum += ageArray[i];
     }
 
-    double avgAges = double(totalSum)/double(agesQuantity);
+    double avgAges = double(totalSum)/double(agesQty);
 
     avgAges = round(avgAges*100)/100;
 
     cout << "\nEl promedio de las edades es: ";
 
     printf("%g", avgAges);
-
-    delete[] ageArray;
+    cout << "\n";
 }
 
 void getIncPerc() {
 
-    int agesQuantity = getVectorSize();
-    int* ageArray = fillVectorRand(agesQuantity);
+    int agesQty = getVectorSize();
+    int* ageArray = applyFilling(agesQty);
     int totalSum = 0;
 
-    for (int i = 0; i < agesQuantity; i++) {
+    for (int i = 0; i < agesQty; i++) {
         totalSum += ageArray[i];
     }
 
@@ -150,42 +170,39 @@ void getIncPerc() {
 
     cout << "\nEl total de las edades mas el porcentaje ingresado es: ";
     printf("%g", totalIncrease);
-
-    delete[] ageArray;
+    cout << "\n";
 }
 
 void getOlderAge() {
-    int agesQuantity = getVectorSize();
-    int* ageArray = fillVectorRand(agesQuantity);
+    int agesQty = getVectorSize();
+    int* ageArray = applyFilling(agesQty);
 
     int olderAge = 0;
 
-    for (int i = 0; i < (agesQuantity-1); i ++) {
+    for (int i = 0; i < (agesQty-1); i ++) {
         if (ageArray[i] > olderAge){
             olderAge = ageArray[i];
         }
     }
 
     cout << "\nLa edad mayor es: " << olderAge;
-
-    delete[] ageArray;
+    cout << "\n";
 }
 
 void getLowerAge() {
-    int agesQuantity = getVectorSize();
-    int* ageArray = fillVectorRand(agesQuantity);
+    int agesQty = getVectorSize();
+    int* ageArray = applyFilling(agesQty);
 
     int lowerAge = ageArray[0];
 
-    for (int i = 1; i < agesQuantity; i ++) {
+    for (int i = 1; i < agesQty; i ++) {
         if (ageArray[i] < lowerAge){
             lowerAge = ageArray[i];
         }
     }
 
     cout << "\nLa edad menor es: " << lowerAge;
-
-    delete[] ageArray;
+    cout << "\n";
 }
 
 void applyArrayFusion() {
@@ -194,18 +211,16 @@ void applyArrayFusion() {
     pause_cls();
 
     int agesQty1 = getVectorSize();
-    int* ageArray1 = fillVectorRand(agesQty1);
+    int* ageArray1 = applyFilling(agesQty1);
 
     cout << "\nA continuación se llenará el vector secundario: \n";
     pause_cls();
 
     int agesQty2 = getVectorSize();
-    int* ageArray2 = fillVectorRand(agesQty2);
+    int* ageArray2 = applyFilling(agesQty2);
 
     int fusionQty = agesQty1+agesQty2;
     int fusionArray[fusionQty];
-
-    int counter = 0;
 
     for (int i = 0; i < agesQty1; ++i) {
         fusionArray[i] = ageArray1[i];
@@ -218,8 +233,6 @@ void applyArrayFusion() {
     string arrayFusionMsg = "\nLa fusión de las edades serían: \n";
     getVectorAges(fusionArray, fusionQty, arrayFusionMsg);
 
-    delete[] ageArray1;
-    delete[] ageArray2;
 }
 
 int main() {
@@ -272,8 +285,8 @@ int main() {
                 cout << "\nMuchas gracias, hasta pronto!\n";
                 exit(EXIT_SUCCESS);
             default:
-                cout << "Opción incorrecta, trate nuevamente.";
-                cin.get();
+                cout << "Opción incorrecta, trate nuevamente.\n";
+                pause_cls();
                 option = 1;
         }
     } while ( option <= 7);
