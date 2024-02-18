@@ -1,4 +1,4 @@
-"/Users/robjimn/Library/Application Support/JetBrains/Toolbox/apps/CLion-Nova/ch-0/233.13871/CLion 2023.3 EAP.app/Contents/bin/cmake/mac/aarch64/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/robjimn/Library/Application Support/JetBrains/Toolbox/apps/CLion-Nova/ch-0/233.13871/CLion 2023.3 EAP.app/Contents/bin/ninja/mac/aarch64/ninja" -G Ninja -S "/Users/robjimn/Documents/Git Projects/DataStructures/Tareas/Tarea1" -B "/Users/robjimn/Documents/Git Projects/DataStructures/Tareas/Tarea1/cmake-build-debug"
+"/private/var/folders/kd/xs6y4v8x4s5fp687n5jbls1h0000gr/T/AppTranslocation/33AECC63-6BCB-480E-A086-7C4B37A2F3C1/d/CLion 2024.1 EAP.app/Contents/bin/cmake/mac/aarch64/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/private/var/folders/kd/xs6y4v8x4s5fp687n5jbls1h0000gr/T/AppTranslocation/33AECC63-6BCB-480E-A086-7C4B37A2F3C1/d/CLion 2024.1 EAP.app/Contents/bin/ninja/mac/aarch64/ninja" -G Ninja -S "/Users/robjimn/Documents/Git Projects/DataStructures/Tareas/Tarea1" -B "/Users/robjimn/Documents/Git Projects/DataStructures/Tareas/Tarea1/cmake-build-debug"
 -- The C compiler identification is AppleClang 15.0.0.15000100
 -- The CXX compiler identification is AppleClang 15.0.0.15000100
 -- Detecting C compiler ABI info
@@ -11,6 +11,6 @@
 -- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (1.6s)
+-- Configuring done (7.0s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/robjimn/Documents/Git Projects/DataStructures/Tareas/Tarea1/cmake-build-debug

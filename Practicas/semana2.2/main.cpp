@@ -7,7 +7,7 @@ double num1, num2;
 // Definición de funciones
 
 void get_info () {
-    cout << " Ingrese el primer número: ";
+    cout << "\n Ingrese el primer número: ";
     cin >> num1;
 
     cout << " Ingrese el segundo número: ";
@@ -51,7 +51,6 @@ void get_avg (double num1, double num2) {
     cout << "\n- El resultado del promedio de " << num1 << " y " << num2 << " es: " << result << "\n";
 }
 
-
 int pause_cls() {
     std::cout << "\n Press Enter to continue..." << std::endl << "\n";
     std::cin.get();  // Wait for user to press Enter key
@@ -72,7 +71,7 @@ int main() {
         cout << "   4. Dividir  \n";
         cout << "   5. Aumentar 50% (la suma de dos números)  \n";
         cout << "   6. Calcular promedio  \n";
-        cout << "   0. Salir  \n";
+        cout << "   7. Salir  \n";
         cout << " Ingrese la opción deseada: ";
         cin >> option;
 

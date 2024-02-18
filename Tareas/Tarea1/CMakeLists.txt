@@ -5,5 +5,5 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Tarea1 main.cpp)
 
-find_package(Curses REQUIRED)
-target_link_libraries(Tarea1 PRIVATE ${CURSES_LIBRARIES})
+#find_package(Curses REQUIRED)
+#target_link_libraries(Tarea1 PRIVATE ${CURSES_LIBRARIES})

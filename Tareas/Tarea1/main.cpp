@@ -10,7 +10,7 @@ double pos2;
 double pos3;
 
 void obtenerInfo() {
-    cout << "- Ingrese el primer número: ";
+    cout << "\n- Ingrese el primer número: ";
     cin >> num1;
 
     cout << "- Ingrese el segundo número: ";
@@ -209,7 +209,6 @@ void mostrarMenor(double num1, double num2, double num3) {
     cout << "\n-El número menor de los tres valores es: " << numMenor << "\n";
 }
 
-
 int pause_cls() {
     std::cout << "\n Press Enter to continue..." << std::endl << "\n";
     std::cin.get(); // Wait for user to press Enter key
@@ -229,7 +228,7 @@ int main() {
         cout << "   4. Aumentar porcentaje \n";
         cout << "   5. Mostrar mayor \n";
         cout << "   6. Mostrar menor \n";
-        cout << "   0. Salir  \n";
+        cout << "   7. Salir  \n";
         cout << "\n Ingrese la opción deseada: ";
         cin >> option;
 
@@ -237,38 +236,41 @@ int main() {
             case 1:
                 obtenerInfo();
                 ordenarAsc(num1, num2, num3);
-                pause_cls();
+            pause_cls();
                 break;
             case 2:
                 obtenerInfo();
                 ordenarDes(num1, num2, num3);
-                pause_cls();
+            pause_cls();
                 break;
             case 3:
                 obtenerInfo();
                 obtenerProm(num1, num2, num3);
-                pause_cls();
+            pause_cls();
                 break;
             case 4:
                 obtenerInfo();
                 aumentarPorc(num1, num2, num3);
-                pause_cls();
+            pause_cls();
                 break;
             case 5:
                 obtenerInfo();
                 mostrarMayor(num1, num2, num3);
-                pause_cls();
+            pause_cls();
                 break;
             case 6:
                 obtenerInfo();
                 mostrarMenor(num1, num2, num3);
-                pause_cls();
+            pause_cls();
                 break;
+            case 7:
+                cout << "\nMuchas gracias, hasta pronto!\n";
+                exit(EXIT_SUCCESS);
             default:
                 cout << "Valor incorrecto, por favor trate nuevamente.";
                 cin.get();
                 option = 1;
         }
-        system("clear");
+    system("clear");
     } while (option <= 6);
 }
